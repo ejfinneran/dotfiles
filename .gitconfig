@@ -1,0 +1,31 @@
+[user]
+	name = E.J. Finneran
+	email = ej.finneran@gmail.com
+[color]
+	ui = true
+[alias]
+	pop = reset --soft HEAD~1
+	ci = commit
+	co = checkout
+	br = branch
+	st = status
+	a = add
+	d = rm
+	sh = show
+	log = log --stat
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	lasttag				 =	!git describe --tags `git rev-list --tags --max-count=1
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[push]
+	default = tracking
+[rerere]
+	enabled = false
+[github]
+	user = ejfinneran
+[credential]
+	helper = store
+[url "git@git.rigado.com:"]
+	insteadOf = https://git.rigado.com/
+
