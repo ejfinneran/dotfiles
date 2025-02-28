@@ -1,0 +1,39 @@
+[user]
+	name = E.J. Finneran
+	email = ej.finneran@gmail.com
+[color]
+	ui = auto
+[alias]
+	pop = reset --soft HEAD~1
+	ci = commit
+	co = checkout
+	br = branch
+	st = status
+	a = add
+	d = rm
+	sh = show
+	log = log --stat
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[push]
+	default = tracking
+[rerere]
+	enabled = false
+[github]
+	user = ejfinneran
+[credential]
+	helper = store
+	useHttpPath = true
+[url "git@git.rigado.com:"]
+	insteadOf = https://git.rigado.com
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+
+[includeIf "hasconfig:remote.*.url:*git.rigado.com*"]
+    path = ~/.gitconfig-rigado
+
+[includeIf "gitdir:~/projects/rigado/"]
+    path = ~/.gitconfig-rigado
