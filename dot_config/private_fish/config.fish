@@ -5,7 +5,13 @@ function jq_logs
     jq -r '[(.__REALTIME_TIMESTAMP | sub("......$"; "") | tonumber | todate), ._HOSTNAME, ._PID, .SYSLOG_IDENTIFIER, .MESSAGE] | @tsv'
 end
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if test -f /opt/homebrew/bin/brew
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+end
+
+if test -f /usr/local/bin/brew
+   eval "$(/usr/local/bin/brew shellenv)"
+end
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
