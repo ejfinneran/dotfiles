@@ -1,5 +1,12 @@
+if test -f ~/.aliases
+    source ~/.aliases
+end
+function jq_logs
+    jq -r '[(.__REALTIME_TIMESTAMP | sub("......$"; "") | tonumber | todate), ._HOSTNAME, ._PID, .SYSLOG_IDENTIFIER, .MESSAGE] | @tsv'
+end
+
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
   function fish_greeting
     if set -q fish_private_mode
         set -l line (_ "fish is running in private mode, history will not be persisted.")
@@ -14,5 +21,6 @@ if status is-interactive
     # Keep it that way to not print superfluous newlines on old configuration
     test -n "$fish_greeting"
     and echo $fish_greeting
-end
+  end
+  
 end
