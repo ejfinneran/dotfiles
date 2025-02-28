@@ -3,6 +3,9 @@ alias shubuntu="docker run -it -v $HOME:/host-home ubuntu:latest /bin/bash"
 alias xenial="docker run -it -v $HOME:/host-home -it ubuntu:16.04 /bin/bash"
 alias focal="docker run -it -v $HOME:/host-home -it ubuntu:20.04 /bin/bash"
 alias cs="cd ~/projects/rigado/cascade-server"
+
 alias gst="git status"
 alias ga="git add"
 alias gc="git commit"
+
+alias cm="chezmoi"
