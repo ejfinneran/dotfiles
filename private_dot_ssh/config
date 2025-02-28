@@ -1,0 +1,4 @@
+Include /Users/ej/.colima/ssh_config
+
+Host 10.0.1.225
+  SetEnv TERM=xterm-256color
