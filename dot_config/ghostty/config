@@ -1,0 +1,4 @@
+theme = iTerm2 Dark Background
+font-family = 'Menlo'
+font-size = 20
+command = /usr/local/bin/fish
