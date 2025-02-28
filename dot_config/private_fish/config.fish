@@ -5,6 +5,8 @@ function jq_logs
     jq -r '[(.__REALTIME_TIMESTAMP | sub("......$"; "") | tonumber | todate), ._HOSTNAME, ._PID, .SYSLOG_IDENTIFIER, .MESSAGE] | @tsv'
 end
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 if status is-interactive
   # Commands to run in interactive sessions can go here
   function fish_greeting
